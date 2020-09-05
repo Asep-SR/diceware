@@ -16,7 +16,7 @@ var Diceware = {};
 //
 // How many dice per roll?
 //
-Diceware.num_dice_per_roll = 5;
+Diceware.num_dice_per_roll = 4;
 
 
 
@@ -412,9 +412,9 @@ Diceware.go = function() {
 	}
 
 
-	var dice = 5;
+	var dice = 4;
 	if (Diceware.get_data["dice"]) {
-		if (Diceware.get_data["dice"] >= 5 && Diceware.get_data["dice"] <= 7) {
+		if (Diceware.get_data["dice"] >= 4 && Diceware.get_data["dice"] <= 7) {
 			dice = Diceware.get_data["dice"];
 			Diceware.num_dice_per_roll = dice;
 		}
