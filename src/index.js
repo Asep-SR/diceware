@@ -25,12 +25,13 @@ Diceware.num_dice_per_roll = 4;
 *
 * @param object wordlist Our hash table of dice rolls and their corresponding words.
 * @param integer index 
+* @param integer i  
 *
 * @return string The word from the dicelist
 */
-Diceware.get_word = function(wordlist, index) {
+Diceware.get_word = function(wordlist, index, i) {
 	
-	var retval = wordlist[index];
+	var retval = wordlist[i][index];
 
 	if (retval) {
 		retval = retval[0].toUpperCase() + retval.slice(1);
@@ -240,13 +241,19 @@ Diceware.rollDiceHandler = function(e) {
 		// Now that we have the results, get the word for each roll, 
 		// save the roll, and push the word onto the passphrase.
 		//
+		i = 0;
 		data.forEach(function(row) {
-
+			
+			console.log(i);
+			
 			var roll = {};
 			roll.dice = row;
-			roll.word = Diceware.get_word(wordlist, roll.dice.value);
+			roll.word = Diceware.get_word(wordlist, roll.dice.value, i);
 			rolls.push(roll);
 			passphrase.push(roll.word);
+
+			i++;
+			console.log(i);
 	
 		});
 
