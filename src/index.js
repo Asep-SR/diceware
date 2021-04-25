@@ -243,9 +243,7 @@ Diceware.rollDiceHandler = function(e) {
 		//
 		i = 0;
 		data.forEach(function(row) {
-			
-			console.log(i);
-			
+						
 			var roll = {};
 			roll.dice = row;
 			roll.word = Diceware.get_word(wordlist, roll.dice.value, i);
@@ -253,7 +251,6 @@ Diceware.rollDiceHandler = function(e) {
 			passphrase.push(roll.word);
 
 			i++;
-			console.log(i);
 	
 		});
 
